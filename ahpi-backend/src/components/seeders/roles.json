@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Admin",
+    "code": "ADMIN",
+    "weight": 1,
+    "isActive": true,
+    "canDel": false
+  },
+  {
+    "name": "Learner",
+    "code": "LEARNER",
+    "weight": 2,
+    "isActive": true,
+    "canDel": false
+  },
+  {
+    "name": "Instructor",
+    "code": "INSTRUCTOR",
+    "weight": 3,
+    "isActive": true,
+    "canDel": false
+  }
+]

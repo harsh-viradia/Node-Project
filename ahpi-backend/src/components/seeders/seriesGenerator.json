@@ -1,0 +1,42 @@
+[
+  {
+    "type": "1",
+    "startFrom": 0,
+    "prefix": "ORDER",
+    "suffix": "",
+    "totalEntry": 0,
+    "isActive": true
+  },
+  {
+    "type": "2",
+    "startFrom": 0,
+    "prefix": "TRNS",
+    "suffix": "",
+    "totalEntry": 0,
+    "isActive": true
+  },
+  {
+    "type": "3",
+    "startFrom": 0,
+    "prefix": "INV_",
+    "suffix": "",
+    "totalEntry": 0,
+    "isActive": true
+  },
+  {
+    "type": "4",
+    "startFrom": 0,
+    "prefix": "",
+    "suffix": "",
+    "totalEntry": 0,
+    "isActive": true
+  },
+  {
+    "type": "5",
+    "startFrom": 0,
+    "prefix": "",
+    "suffix": "",
+    "totalEntry": 0,
+    "isActive": true
+  }
+]

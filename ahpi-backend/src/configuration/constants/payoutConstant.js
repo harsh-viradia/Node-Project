@@ -1,0 +1,15 @@
+const PAYOUT_TYPE = {
+    MANUAL_TRANSFER : 1,
+    AUTOMATIC_TRANSFER : 2
+}
+
+const  PAYOUT_STATUS_TYPE = {
+    COMPLETED : "COMPLETED",
+    PENDING: "PENDING",
+    FAILED : "FAILED" 
+}
+
+module.exports = {
+    PAYOUT_TYPE,
+    PAYOUT_STATUS_TYPE
+}

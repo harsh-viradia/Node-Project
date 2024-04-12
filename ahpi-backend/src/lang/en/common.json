@@ -1,0 +1,82 @@
+{
+  "auth": {
+      "userNotAllowed": "You are unable to access this platform.",
+      "accountNotFoundEmail": "There’s no account found with this email address.",
+      "userNotAllowedSSO": "You are not authorize from sso-server.",
+      "unAuthenticated": "UNAUTHENTICATED.",
+      "register": "Registration successful.",
+      "failedRegister": "Failed Registration! Please try later.",
+      "failedLogin": "Failed Login! Please try later.",
+      "login": "Login",
+      "invalid": "Invalid OTP.",
+      "logout": "Logout successfully.",
+      "passError": "Incorrect password.",
+      "passwordWrong": "Current password is incorrect.",
+      "deActivateUser": "Your account is deactivate! Please contact ADMIN.",
+      "emailExists":"Entered email already exists.",
+      "mobNoExists":"Entered mobile number already exists.",
+      "freeCourseNotAllow":"You are unable to access free OGM Course.",
+      "logoutSuccess": "You have successfully logged out!"
+  },
+  "module": {
+    "create": "{module} has been created successfully.",
+    "add": "{module} has been added successfully.",
+    "update": "{module} has been updated successfully.",
+    "updateFailed": "Error Occurred while update {module}.",
+    "delete": "{module} has been deleted successfully.",
+    "list": "All {module} have been obtained successfully.",
+    "get": "{module} has been obtained successfully.",
+    "createError":"Couldn't create the {module}.",
+    "quizFailError":"Quiz Failed",
+    "updateError": "{module} not found or you can't update this {module}.",
+    "activate": "{module} activated.",
+    "deactivate": "{module} deactivated.",
+    "updateSequence": "Sequence has been updated.",
+    "alreadyExists": "{module} already exists.",
+    "publish":"You have published {module} course.",
+    "updateStatus": "{module} status updated successfully.",
+    "notFound": "{module} not found!",
+    "save": "Course added in your {module}.",
+    "remove": "Course removed from your {module}.",
+    "defaultStatusActivate": "{module} is selected as the default selection.",
+    "defaultStatusDeactivate" : "{module} is removed from default selection.",
+    "viewed": "You viewed this {module}.",
+    "sentData": "{module} sent successfully.",
+    "startTest": "{module} started successfully.",
+    "submitTest": "{module} submitted successfully.",
+    "alreadyCompleted": "You have already completed this {module}.",
+    "isApprove": "{module} request is send for approval.",
+    "verified" : "Course has been accepted.",
+    "reject" : "Course has been rejected.",
+    "reachedMax": "You have reached to max limit for create new {module}.",
+    "cannotGive": "You are restricted to give a review as {reason}.",
+    "alreadyGiven": "You already submitted your {module}.",
+    "alreadySend": "No {module} is due for this instructor.",
+    "notUpdate": "{module}",
+    "greaterVal": "Reward point must be less than selling price.",
+    "alreadyUsed": "{module} already used.",
+    "send": "OTP have successfully send to you mail id.",
+    "expireOTP": "OTP expired.",
+    "verify": "{module} verify.",
+    "notVerify": "Please complete your registration verification process."
+  },
+  "payment": {
+    "failed": "Something went wrong with your payment. Ensure enough funds and correct card details. Questions? Contact your bank.",
+    "sucess":"{module} sucess.",
+    "system_error" : "Technical Error"
+  },
+  "validations": {
+    "deleteError": "You can't delete this {module} as {reason}.",
+    "somethingWentWrongError": "Something went wrong in {module}",
+    "cannotSent": "You can't sent this {module} as {reason}.",
+    "sentNotification": "{module} and {anotherEvent} successfully.",
+    "sentNotificationErr": "{module} successfully but could not sent as {reason}"
+  },
+  "dbValidations": {
+    "fieldFound": "{field} ({fieldValue}) already exists."
+  },
+  "reasonsFor": { 
+    "notCompletedCourse": "you have not completed this course",
+    "courseLimit": "Course limit must be more then created course!"
+  }
+}

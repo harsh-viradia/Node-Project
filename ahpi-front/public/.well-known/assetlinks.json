@@ -1,0 +1,14 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.orbitskills.knovator",
+      "sha256_cert_fingerprints": [
+        "CA:7E:B1:97:9D:60:BC:6C:5C:F2:32:42:12:10:C3:35:D2:BC:1A:CF:34:F2:77:31:73:A9:4B:D1:01:5A:ED:3E",
+        "FD:C1:29:D2:BF:74:FF:DC:F7:0E:55:12:D8:42:E6:47:CC:40:F6:B1:DD:35:FB:D9:10:DE:CA:A2:52:55:EB:12",
+        "0F:21:2C:C4:03:39:86:8A:7D:A1:B1:ED:7C:F4:87:ED:04:A3:8C:E4:D6:9E:5C:D2:D8:A6:FC:60:DF:BF:2B:C2"
+      ]
+    }
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "specificMsg": {
+    "seoUpdate": "SEO has been updated successfully.",
+    "seoExists": "SEO already exists.",
+    "emptyData": "Data not available.",
+    "enable": "Download enabled.",
+    "disable": "Download disabled.",
+    "answered": "You answered the question.",
+    "publishErr": "You can't publish the course as You  have to add atleast one section and one material.",
+    "passingScoreErr": "There is an issue with publishing the course as the passing score does not align with the quiz score in the {material} within the {section}",
+    "activateErr": "You are unable to active this course as it is in draft.",
+    "validPrice": "Selling price must be less than or equal to MRP.",
+    "validPriceTier": "Selling price tier must be less than or equal to MRP.",
+    "notificationRead": "Notification read successfully.",
+    "couponApplied": "Coupon applied successfully.",
+    "couponExpire": "Coupon code expired.",
+    "couponInvalid": "Coupon code invalid.",
+    "couponInvalidForUser": "The coupon code entered is invalid for this user.",
+    "couponInvalidForCourse": "The coupon code entered is invalid for this course.",
+    "couponInvalidForCategory": "The coupon code entered is invalid for this category.",
+    "emptyCartCoupon": "Your cart is empty. Please add courses to the cart before applying coupon."
+  }
+}

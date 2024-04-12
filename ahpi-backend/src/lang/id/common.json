@@ -1,0 +1,77 @@
+{
+  "auth": {
+      "userNotAllowed": "Anda tidak dapat mengakses platform ini.",
+      "accountNotFoundEmail": "Tidak ada akun yang ditemukan dengan alamat email ini.",
+      "userNotAllowedSSO": "Anda tidak diberi otorisasi dari sso-server.",
+      "unAuthenticated": "Tidak terautentikasi.",
+      "register": "Registrasi berhasil.",
+      "failedRegister": "Failed Registration! Please try letter.",
+      "failedLogin": "Failed Login! Please try later.",
+      "login": "Login",
+      "invalid": "Invalid OTP.",
+      "logout": "Logout successfully.",
+      "passError": "Incorrect password.",
+      "emailExists":"Email yang dimasukkan sudah ada yang menggunakan.",
+      "mobNoExists":"Nomor ponsel yang dimasukkan sudah ada yang menggunakan.",
+      "freeCourseNotAllow":"Anda tidak dapat mengakses pelatihan OGM gratis."
+  },
+  "module": {
+    "create": "{module} telah berhasil dibuat.",
+    "add": "{module} telah berhasil ditambahkan.",
+    "update": "{module} telah berhasil diperbarui.",
+    "updateFailed": "Error Occurred while update {module}.",
+    "delete": "{module} telah berhasil dihapus.",
+    "list": "Semua {module} telah berhasil diperoleh.",
+    "get": "{module} telah berhasil diperoleh.",
+    "createError":"Tidak dapat membuat {module}.",
+    "quizFailError":"Kuis Gagal",
+    "updateError": "{module} tidak ditemukan atau Anda tidak dapat memperbarui {module} ini.",
+    "activate": "{module} diaktifkan.",
+    "deactivate": "{module} dinonaktifkan.",
+    "updateSequence": "Urutan telah diperbarui.",
+    "alreadyExists": "{module} sudah ada.",
+    "publish":"Anda telah menerbitkan pelatihan {module}.",
+    "updateStatus": "{module} status berhasil diperbarui.",
+    "notFound": "{module} tidak ditemukan!",
+    "save": "Pelatihan ditambahkan di {module} Anda.",
+    "remove": "Pelatihan dihapus dari {module} Anda.",
+    "defaultStatusActivate": "{module} dipilih sebagai pilihan default.",
+    "defaultStatusDeactivate" : "{module} dihapus dari pilihan default.",
+    "viewed": "Anda melihat {module} ini.",
+    "sentData": "{module} berhasil dikirim.",
+    "startTest": "{module} berhasil dimulai.",
+    "submitTest": "{module} berhasil dikirim.",
+    "alreadyCompleted": "Anda telah menyelesaikan ini {module}.",
+    "isApprove": "{module} permintaan dikirim untuk persetujuan.",
+    "verified" : "Kursus telah diterima.",
+    "reject" : "Pelatihan telah ditolak.",
+    "reachedMax": "Anda telah mencapai batas maksimum untuk membuat {module} baru.",
+    "cannotGive": "Anda dibatasi untuk memberikan ulasan sebagai {reason}.",
+    "alreadyGiven": "Anda sudah mengirimkan {module} Anda.",
+    "alreadySend": "Tidak ada {module} yang dijadwalkan untuk instruktur ini.",
+    "notUpdate": "{module}",
+    "greaterVal" : "Poin reward harus lebih kecil dari harga jual.",
+    "alreadyUsed": "{module} sudah digunakan.",
+    "send": "OTP have successfully send to you mail id.",
+    "expireOTP": "OTP expired.",
+    "verify": "{module} verify.",
+    "notVerify": "Please complete your registration verification process."
+  },
+  "payment": {
+    "failed": "Something went wrong with your payment. Ensure enough funds and correct card details. Questions? Contact your bank."
+  },
+  "validations": {
+    "deleteError": "Anda tidak dapat menghapus {module} ini karena {reason}.",
+    "somethingWentWrongError": "Ada yang tidak beres {module}",
+    "cannotSent": "Anda tidak dapat mengirim {module} ini karena {reason}.",
+    "sentNotification": "{module} dan {anotherEvent} berhasil.",
+    "sentNotificationErr": "{module} berhasil tetapi tidak dapat dikirim karena {reason}"
+  },
+  "dbValidations": {
+    "fieldFound": "{field} ({fieldValue}) already exists."
+  },
+  "reasonsFor": {
+    "notCompletedCourse": "Anda tidak menyelesaikan kursus ini",
+    "courseLimit": "Batas kursus harus lebih dari kursus yang dibuat!"
+  }
+}

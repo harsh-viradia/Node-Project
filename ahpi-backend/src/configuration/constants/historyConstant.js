@@ -1,0 +1,14 @@
+const MODULE_NAME = {
+    CERTIFICATE:"CERTIFICATE",
+    PAYTM_PAYMENT: "Paytm Transaction"
+}
+
+const HISTORY_CODE = {
+    CERTIFICATE:"CERTIFICATE_HISTORY",
+    PAYTM_PAYMENT: "PAYTM_PAYMENT"
+}
+
+module.exports = {
+    MODULE_NAME,
+    HISTORY_CODE
+}

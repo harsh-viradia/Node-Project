@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="blackList" transform="translate(0.32 0.075)">
+    <path id="Path_8343" data-name="Path 8343" d="M0,0H20V20H0Z" transform="translate(-0.32 -0.075)" fill="none"/>
+    <g id="Group_13084" data-name="Group 13084" transform="translate(1.679 1.925)">
+      <path id="Path_8344" data-name="Path 8344" d="M12,7a8,8,0,1,1-8,8A8,8,0,0,1,12,7Zm0,2a6,6,0,1,0,6,6A6,6,0,0,0,12,9Zm0,1.5,4.28,3.11Z" transform="translate(-4 -7)" fill="#888"/>
+      <line id="Line_1" data-name="Line 1" x2="9" transform="translate(3.687 8)" fill="none" stroke="#888" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

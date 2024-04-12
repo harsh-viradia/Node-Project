@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Top Course",
+    "code": "TOP_COURSE",
+    "details": {
+      "purchaseInLastXDays": 60,
+      "limit": 20
+    }
+  },
+  {
+    "name": "Top Category",
+    "code": "TOP_CATEGORY",
+    "details": {
+      "purchaseInLastXDays": 60,
+      "limit": 20
+    }
+  },
+  {
+    "name": "New Publish",
+    "code": "NEW_PUBLISHED",
+    "details": {
+      "lastXPublishedDays": 80
+    }
+  },
+  {
+    "name": "Best Rated",
+    "code": "BEST_RATED",
+    "details": {
+      "minimumReviews": 5,
+      "minimumRating": 3.5
+    }
+  },
+  {
+    "name": "Hot Selling",
+    "code": "HOT_SELLING",
+    "details": {
+      "minimumPurchase": 5,
+      "minimumRating": 4
+    }
+  },
+  {
+    "name": "is coupon and rewards apply",
+    "code": "IS_COUPON_AND_REWARDS_APPLY",
+    "details": {
+      "isBothApplied": true,
+      "isCouponApplied": false,
+      "isRewardsApply": false
+    }
+  },
+  {
+    "name": "reward calc",
+    "code": "REWARD_CALC",
+    "details": {
+      "reward": 1,
+      "price": 0.01
+    }
+  },
+  {
+    "name": "In Apps Prices",
+    "code": "IN_APPS_PRICES",
+    "details": [
+      {
+        "price": 0.99,
+        "productId": "product_test_skills"
+      }
+    ]
+  },
+  {
+    "name": "In Apps Purchase Details",
+    "code": "IN_APPS_PURCHASE_DETAILS",
+    "details": {
+      "aud": "appstoreconnect-v1",
+      "bid": "com.orbitskills.knovator",
+      "header": {
+        "alg": "ES256",
+        "kid": "Y3P7RP9DMV",
+        "typ": "JWT"
+      },
+      "iss": "12e68e7d-71e5-4310-85f0-65d1d799cd94",
+      "privateKey": ""
+    }
+  },
+  {
+    "name": "About Us",
+    "code": "ABOUT_US",
+    "details": "<!DOCTYPE html><html lang='en'><head> <meta charset='UTF-8'> <meta http-equiv='X-UA-Compatible' content='IE=edge'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> <script src='https://cdn.tailwindcss.com'></script> <title>Document</title> <script>tailwind.config={darkMode: 'class',}</script></head><body> <div class='p-7 container m-auto'> <div class=' lg:flex lg:py-16 lg:px-16 w-full gap-20'> <div class='lg:w-1/2 '> <h1 class='text-3xl font-bold'>ABOUT ASSOCIATION OF HEALTHCARE PROVIDERS (INDIA)</h1> </div><div class='lg:w-1/2 mt-10 lg:mt-0'> <p class='md:text-lg'>The organization known as AHPI, or the 'not for profit' organization, operates with the primary goal of advocating for its members and their ability to provide appropriate healthcare services to the broader community.</p></div></div><div class='lg:mt-12 mt-7 lg:px-16'> <img src='Untitled.png' alt='Banner'> </div><div class='w-full flex lg:py-16 lg:px-16 gap-20 mt-8 lg:mt-0'> <div class='w-full lg:w-1/2'> <h1 class='text-xl lg:text-2xl font-bold pb-3'>OUR VISION</h1> <p>The Association of Healthcare Providers (India)'s vision is to have a healthy India, encompassing society, community and common man at the grass root.</p></div><div class='w-1/2 hidden lg:block'> <img src='Untitled.png' alt=''> </div></div><div class='w-full flex lg:py-16 lg:px-16 gap-20 mt-8 lg:mt-0'> <div class='w-1/2 lg:block hidden '> <img src='Untitled.png' alt=''> </div><div class='lg:w-1/2'> <h1 class='font-bold text-xl lg:text-2xl pb-3'>Our Mision</h1> <p>AHPI shall work with all stake holders in establishing a national system where, common man can avail assured universal access to basic health services. The Federation will facilitate its members and partnering bodies, in carrying out healthcare improvements to serve the community effectively and efficiently.</p></div></div><div class='lg:px-16 mt-10'> <div class='lg:px-16'> <h1 class='text-3xl font-bold'>About AHPI</h1> <div class=' pt-9'> <ul class='list-disc pl-8 space-y-3'> <li> <strong>AHPI</strong>: It's important to note that AHPI operates as a 'not for profit' organization, which means its primary objective is not to generate profits for its members but rather to fulfill a particular mission or purpose. </li><li> <strong>Advocacy</strong> : AHPI engages in advocacy, which means it actively works to influence government policies, regulations, and decisions related to healthcare. This advocacy is directed toward various entities, including government bodies, regulatory agencies, and other stakeholders involved in healthcare. </li><li> <strong>Members</strong> : AHPI's membership likely consists of healthcare organizations or entities that provide healthcare services. These members may include hospitals, clinics, healthcare providers, and related institutions. AHPI's primary focus is to support and represent the interests of these member organizations. </li><li> <strong>Issues</strong> : AHPI addresses a range of healthcare-related issues. These issues may pertain to healthcare policy, regulation, funding, quality standards, and any other matters that can impact the ability of its member organizations to deliver healthcare services effectively. </li><li> <strong>Community at Large</strong>: AHPI's ultimate aim is to ensure that its advocacy efforts result in improved healthcare services for the broader community. This means they are not just concerned with the interests of their member organizations but with the well-being and access to healthcare for the general public. </li></ul> </div></div></div></div></body></html>"
+  },
+  {
+    "name": "Privacy Policy",
+    "code": "PRIVACY_POLICY",
+    "details": "<div className='container my-16'> <div className=''> <h1 className='text-center my-3 lg:my-5'>Privacy Policy</h1> <p> We are committed to protecting your privacy and the confidentiality of your information. This Privacy Policy outlines our practices regarding the collection and use of your data. By using our services, you consent to the practices described herein. </p></div><div className='gap-8 flex flex-col mt-12'> <div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/detail.svg' alt=''/> <h3>Purpose of the Details :</h3> </div><div> <p> The primary purpose for which the details are collected and used is specified as 'receiving payments made to AHPI.' This suggests that these details may include personal, financial, or transaction-related information required to facilitate payments or financial transactions involving AHPI. </p></div></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/confi.svg' alt=''/> <h3>Confidentiality </h3> </div><div className='section-text'> Any and all information collected for the purpose of receiving payments will be treated with the utmost privacy and security. This includes protecting the details from unauthorized access, disclosure, or use. </div></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/nondisclosure.svg' alt=''/> <h3>Non-Disclosure</h3> </div><div className='section-text'> The information will not be shared with third parties, individuals not involved in the payment process, or any unauthorized personnel. This commitment to non-disclosure underscores the importance of maintaining the privacy and security of the provided details. </div></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/limiteduse.svg' alt=''/> <h3>Limited Use </h3> </div><div className='section-text'> The collected details will only be used for the specified purpose, which is receiving payments made to AHPI. This signifies that AHPI will not employ the information for any other purposes such as marketing, research, or any unrelated activities. </div></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/legal.svg' alt=''/> <h3>Legal and Ethical Compliance </h3> </div><div className='section-text'> The statement aligns with legal and ethical standards governing the handling of personal and financial data. This is important to ensure that AHPI operates in accordance with applicable data protection and privacy laws and regulations. </div></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/protect.svg' alt=''/> <h3>Data Protection</h3> </div><div className='section-text'> It is implied that appropriate measures will be taken to safeguard the data against breaches, theft, or unauthorized access. This may include encryption, secure storage, access controls, and regular security audits. </div></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/user.svg' alt=''/> <h3>User Consent</h3> </div><div className='section-text'> The individuals or entities providing their details for payment purposes do so with informed consent. Consent implies that they are aware of how their data will be used and have agreed to these terms. </div></div></div></div>"
+  },
+  {
+    "name": "Terms and conditions",
+    "code": "TERMS_AND_CONDITION",
+    "details": " <div className='container my-16'> <div className=''> <h2 className='text-center my-3 lg:my-5'>Terms and Conditions</h2> <p className='mt-2'> Please carefully read and understand the following Terms and Conditions ('Terms') before using our services. By accessing or using our services, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you should refrain from using our services. </p></div><div className='gap-8 flex flex-col mt-12'> <div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/frame.svg' alt=''/> <h3> Incorrect Account Number or Personal Details</h3> </div><div> <p> AHPI is not responsible for payments that do not reach the correct AHPI account due to inaccuracies in the provided account number or personal details. This means that if you make a payment and provide incorrect information, AHPI cannot be held liable for any resulting issues or losses. governments. </p></div></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/responsibility.svg' alt=''/> <h3>Payment Refusal or Decline</h3> </div><p> If the payment is declined or refused by your credit or debit card supplier, AHPI is not obligated to inform you of this situation. It is your responsibility to verify with your bank or card supplier that the payment has been successfully processed. This condition emphasizes the importance of ensuring that your payment method is valid and funded. </p></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/Disclaimer.svg' alt=''/> <h3>Limitation of Liability</h3> </div><p> AHPI states that it will not be held liable for any damages arising from the use or inability to use their website or any linked websites. This includes damages resulting from errors, omissions, or any issues related to the materials or information provided on these sites. This condition applies irrespective of the legal basis (warranty, contract, tort, etc.) and whether or not you were informed about the possibility of such damages </p></div><div className='gap-3 flex flex-col '> <div className='flex gap-2'> <img src='/images/noresponsibility.svg' alt=''/> <h3>Responsibility for Downtime</h3> </div><p> AHPI explicitly states that they will not be responsible for any downtime that may occur. This means that if their website or services experience periods of unavailability or technical issues, they are not obligated to provide compensation or take responsibility for any inconveniences or losses incurred by users during these periods. </p></div></div></div>"
+  },
+  {
+    "name": "Mobile Validations Keys",
+    "code":"MOBILE_VALIDATE_KEY",
+    "details":{
+      "androidVersion" : "1.0.0",
+      "iosVersion" : "1.0.0",
+      "isPurchase" : false
+    }
+  }
+]

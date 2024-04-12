@@ -1,0 +1,6 @@
+cspell.json
+next.config.js
+tailwind.config.js
+alias.config.js
+webpack.config.js
+postcss.config.js

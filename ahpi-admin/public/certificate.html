@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        display: inline-block;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+      .main-bg {
+        background-image: url(images/certificate-pattern.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        min-height: 850px;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+      }
+      .certificate {
+        position: relative;
+        display: inline-block;
+      }
+      .certificate::before {
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 30px;
+        background-image: url(images/certificate-star.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: -50px;
+        top: 0px;
+      }
+      .certificate::after {
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 30px;
+        background-image: url(images/certificate-star.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: -50px;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-bg">
+      <div style="width: 100%">
+        <div style="padding: 50px 116px">
+          <div style="text-align: center; margin-top: 40px">
+            <img src="images/certificate-logo.png" style="height: 70px" alt="" />
+            <div style="margin-top: 60px">
+              <div class="certificate">
+                <img src="images/certificate-SeRtifikat-pRestasi.png" style="width: 410px" alt="" />
+              </div>
+              <p style="font-size: 14px; margin: 14px 0">
+                Dengan ini memberikan sertifikat untuk berhasil menyelesaikan
+              </p>
+              <h6 style="color: #40b5e8; font-size: 30px">“Cloud Practitioner Essentials (Belajar Dasar AWS Cloud)”</h6>
+              <p style="font-size: 14px; margin: 14px 0">dan menyatakan untuk</p>
+              <h1 style="font-size: 50px; font-weight: 800">Reza Marwansyah</h1>
+              <p style="font-size: 30px; margin: 10px 0; color: #666666">MRZMGO1N0ZYQ</p>
+              <p style="font-size: 14px; margin: 14px 0">
+                Telah menyelesaikan studi tingkat ini dengan kelas terintegrasi. Prestasinya adalah dengan ini
+                dikonfirmasi
+              </p>
+              <div style="margin-top: 20px; text-align: left">
+                <div style="float: left">
+                  <p style="font-size: 14px; margin: 14px 0">24 April 2021</p>
+                  <img src="images/certificate-sign.png" style="height: 50px" alt="" />
+                  <p style="font-size: 14px; font-weight: 600">Prof. Dr. Ing. BJ Habibie</p>
+                  <p style="font-size: 14px; margin-top: 6px">Presiden ke-3 Republik Indonesia</p>
+                </div>
+                <div style="float: right; text-align: right">
+                  <img src="images/certificate-qrCode.png" style="height: 50px; width: 50px" alt="" />
+                  <p style="font-size: 14px; font-weight: 600">Prof. Dr. Ing. BJ Habibie</p>
+                  <p style="font-size: 14px; margin-top: 6px">Presiden ke-3 Republik Indonesia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

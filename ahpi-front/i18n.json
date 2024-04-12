@@ -1,0 +1,31 @@
+{
+  "locales": ["en"],
+  "defaultLocale": "en",
+  "localeDetection": false,
+  "pages": {
+    "*": ["common"],
+    "/": ["home"],
+    "/login":["auth"],
+    "/forgot-password":["auth"],
+    "/reset-password":["auth"],
+    "/register":["auth"],
+    "/otp":["auth"],
+    "/course-detail/[slug]": ["courseDetail"],
+    "/my-learning/[slug]": ["courseDetail"],
+    "/cart": ["cart", "courseDetail"],
+    "/category": ["category"],
+    "/certificate/[code]": ["certificate"],
+    "/checkout/[orderNo]": ["checkout", "address", "courseDetail", "cart"],
+    "/contact-us": ["contactUs"],
+    "/notification": ["notification", "purchaseHistory"],
+    "/change-password": ["changePassword"],
+    "/profile-setting": ["profileSetting"],
+    "/purchase-history": ["purchaseHistory", "notification"],
+    "/privacy-policy": ["privacyPolicy"],
+    "/terms": ["terms"],
+    "/about-us": ["about-us"],
+    "/address": ["address"],
+    "/address/add": ["address", "checkout"],
+    "/reward-point-history": ["rewardPoints", "purchaseHistory"]
+  }
+}

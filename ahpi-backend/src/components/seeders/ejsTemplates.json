@@ -1,0 +1,45 @@
+[
+  {
+    "nm": "Successfully Onboarded",
+    "code": "SUCCESSFULLY_ONBOARDED_LEARNER",
+    "subject": "Welcome to OrbitJobs 🚀",
+    "body": "<tr>    <td style=\"padding-top: 20px\">        <p>Hi {{name}},</p>        \n\n<p><b>Welcome to the Orbit Jobs, Techies!</b><br>\n\nWe hope you will find your dream tech job on our platform.\n<br>If you have any inquiries or further information, feel free to contact us on <strong style=\"font-size: 14px; color: #3498db\">{{email}}</strong></p>        \n\n<p>Cheers,<br>\nOrbit Skills Team.</p>    </td></tr>",
+    "isActive": true
+  },
+  {
+    "nm": "Payment Successful",
+    "code": "PAYMENT_SUCCESSFUL",
+    "subject": "Payment Successful.",
+    "body": "<tr>    <td style=\"padding-top: 20px\">        <p>Hi {{name}},</p>        \n\n<p>Thank you for purchasing courses at Orbit Skills! Your payment is confirmed. Your invoice is enclosed.</p>        \n\n<p>Cheers,<br>\nOrbit Skills Team.</p>    </td></tr>",
+    "isActive": true
+  },
+  {
+    "nm": "Payment Failed",
+    "code": "PAYMENT_FAILED",
+    "subject": "Payment Failure.",
+    "body": "<tr>    <td style=\"padding-top: 20px\">        <p>Hi {{name}},</p>        \n\n<p>We were unable to process your payment for <b>{{planNm}}</b> subscription. Click the button below to continue the payment process.<br>\n<a target=\"blank\" class=\"button btn\" href={{payBtn}}>Make Payment Now</a></p>        \n\n<p>Cheers,<br>\nOrbit Skills Team.</p>    </td></tr>",
+    "isActive": true
+  },
+
+  {
+    "nm": "Successfully Onboarded Bahasa Content",
+    "code": "SUCCESSFULLY_ONBOARDED_LEARNER_BAHASA",
+    "subject": "Selamat Datang di Orbit Jobs 🚀",
+    "body": "<tr>    <td style=\"padding-top: 20px\">        <p>Hi {{name}},</p>        \n\n<p><b>Selamat datang di Orbit Jobs, Techies!</b><br>\n\nDapatkan pekerjaan teknologi impian kamu hanya di OrbitJobs.\n<br>Jika kamu memiliki pertanyaan atau informasi lebih lanjut, jangan sungkan untuk mengunjungi kami di <strong style=\"font-size: 14px; color: #3498db\">{{email}}</strong></p>        \n\n<p>Cheers,<br>\nOrbit Skills Team.</p>    </td></tr>",
+    "isActive": true
+  },
+  {
+    "nm": "Payment Successful Bahasa Content",
+    "code": "PAYMENT_SUCCESSFUL_BAHASA",
+    "subject": "Pembayaran Berhasil",
+    "body": "<tr>    <td style=\"padding-top: 20px\">        <p>Hi {{name}},</p>        \n\n<p>Terima kasih atas pembelian paket <b>{{planNm}}</b> di OrbitJobs! Pembayaran kamu telah berhasil dikonfirmasi. Selain itu, Invoice kamu juga terlampir di bawah ini.</p>        \n\n<p>Cheers,<br>\nOrbit Skills Team.</p>    </td></tr>",
+    "isActive": true
+  },
+  {
+    "nm": "Payment Failed Bahasa Content",
+    "code": "PAYMENT_FAILED_BAHASA",
+    "subject": "Pembayaran Gagal.",
+    "body": "<tr>    <td style=\"padding-top: 20px\">        <p>Hi {{name}},</p>        \n\n<p>Mohon maaf, kami tidak dapat memproses pembayaran untuk paket <b>{{planNm}}.</b> Untuk tetap lanjut, silakan kamu klik tombol di bawah ini untuk melanjutkan proses pembayaran.<br>\n<a target=\"blank\" class=\"button btn\" href={{payBtn}}>Bayar Sekarang</a></p>        \n\n<p>Cheers,<br>\nOrbit Skills Team.</p>    </td></tr>",
+    "isActive": true
+  }
+]

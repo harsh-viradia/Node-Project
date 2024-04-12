@@ -1,0 +1,30 @@
+{
+  "master": {
+    "create": "Master has been created successfully.",
+    "update": "Master has been updated successfully.",
+    "delete": "Master has been deleted successfully.",
+    "activate": "Master has been activated successfully.",
+    "deactivate": "Master has been deactivated successfully.",
+    "default": "Master has been set to default.",
+    "notDefault": "Master has been removed from default.",
+    "display": "Web view enabled.",
+    "notDisplay": "Web view disabled.",
+    "seq": "Sequence updated successfully.",
+    "findAll": "All masters have been fetched successfully.",
+    "notFound": "Master record has not been found."
+  },
+  "submaster": {
+    "create": "Submaster has been created successfully.",
+    "update": "Submaster has been updated successfully.",
+    "delete": "Submaster has been deleted successfully.",
+    "activate": "Submaster has been activated successfully.",
+    "deactivate": "Submaster has been deactivated successfully.",
+    "default": "Submaster has been set to default.",
+    "notDefault": "Submaster has been removed from default.",
+    "display": "Web view enabled.",
+    "notDisplay": "Web view disabled.",
+    "seq": "Sequence updated successfully.",
+    "findAll": "All Submasters have been fetched successfully.",
+    "notFound": "Submaster record has not been found."
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "terminal.integrated.profiles.windows": {
+    "Cmder": {
+      "path": "C:\\Users\\knovator-6\\AppData\\Roaming\\cmder\\Cmder.exe"
+    }
+  },
+  // "terminal.integrated.defaultProfile.windows": "Cmder",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Monokai",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "tailwindCSS.colorDecorators": "on",
+  "tailwindCSS.emmetCompletions": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.enableSmartCommit": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "git.autofetch": true,
+  "todo-tree.tree.showScanModeButton": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "cSpell.userWords": [
+    "antd",
+    "calcander",
+    "comman",
+    "craco",
+    "daisyui",
+    "darkgray",
+    "Dhanani",
+    "Diodrum",
+    "dragscroll",
+    "forgotpassword",
+    "formbox",
+    "formlibrary",
+    "gsap",
+    "headlessui",
+    "heroicons",
+    "Highcharts",
+    "khushal",
+    "likita",
+    "Listbox",
+    "mkdir",
+    "multifactor",
+    "Noor",
+    "OHIP",
+    "semibold",
+    "shadow",
+    "Speciality",
+    "start",
+    "Stripcolor",
+    "svgs",
+    "Swiper",
+    "tailwind",
+    "tailwindcss",
+    "useractivity",
+    "varnitravel",
+    "wrapperbg"
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "autoimport.filesToScan": "**/*.{js, jsx, ts, tsx, png, jpeg, jpg, webp, svg, json}",
+  "autoimport.useSemiColon": false,
+  "autoimport.autoComplete": true,
+  "javascript.preferences.importModuleSpecifier": "shortest",
+  "path-intellisense.extensionOnImport": false,
+  "javascript.updateImportsOnFileMove.enabled": "prompt",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.tabs.enabled": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "path-intellisense.mappings": {
+    "/": "${workspaceRoot}",
+    "lib": "${workspaceRoot}/lib",
+    "global": "/Users/dummy/globalLibs"
+  },
+  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "svelte.enable-ts-plugin": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSave": "afterDelay",
+  "bracketPairColorizer.depreciation-notice": false,
+  "terminal.external.windowsExec": "C:\\Users\\knovator-6\\AppData\\Roaming\\cmder\\Cmder.exe",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "workbench.editorAssociations": {
+    "*.png": "imagePreview.previewEditor",
+    "*.pdf": "default"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "http.systemCertificates": false,
+  "workbench.colorCustomizations": {},
+  "editor.unicodeHighlight.allowedLocales": {
+    "es": true
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  }
+}

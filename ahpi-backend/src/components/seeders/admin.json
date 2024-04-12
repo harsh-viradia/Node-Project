@@ -1,0 +1,16 @@
+[
+  {
+    "email": "ahpiadmin@yopmail.com",
+    "passwords": [
+      {
+        "pass": "@hP!@dMin123"
+      }
+    ],
+    "mobNo": "123456789",
+    "countryCode": "91",
+    "firstName": "Orbit Skills",
+    "lastName": "Admin",
+    "role": "ADMIN",
+    "canDel": false
+  }
+]

@@ -1,0 +1,17 @@
+node_modules
+.env
+.idea/*
+package-lock.json
+logs/error/*
+logs/info/*
+!logs/error/.gitkeep
+!logs/info/.gitkeep
+public/templates/*
+!public/templates/.gitkeep
+!public/templates/invoice.ejs
+!public/templates/certificates.ejs
+!public/templates/images
+jwt_auth_keys/jwtPrivate.key
+jwt_auth_keys/jwtPublic.key
+Paytm/*
+!Paytm/.gitkeep

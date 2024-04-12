@@ -1,0 +1,204 @@
+stages:
+  - sonarqube_check
+  - build_dev
+  - update_dev
+  - build_qual
+  - update_qual
+  - build_prod
+  - deploy_prod
+  - deploy_ahpi_dev
+
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+
+sonarqube-check:
+  stage: sonarqube_check
+  image:
+    name: sonarsource/sonar-scanner-cli:latest
+    entrypoint: [""]
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar" # Defines the location of the analysis task cache
+    GIT_DEPTH: "0" # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - sonar-scanner -X -Dsonar.sources=. -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.password=$SONAR_PASSWORD
+  allow_failure: true
+  only:
+    - development # or the name of your main branch
+
+build_image_dev:
+  stage: build_dev
+  allow_failure: false
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+    AWS_ACCESS_KEY_ID: $ECR_ACC_KEY
+    AWS_SECRET_ACCESS_KEY: $ECR_SEC_KEY
+    AWS_DEFAULT_REGION: $DEF_REG
+  services:
+    - docker:19.03.14-dind
+  image:
+    name: niravthewowl/dockerawscli:v1
+  needs: ["sonarqube-check"]
+  before_script:
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+  script:
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA --build-arg prv_key="$GIT_PKEY" --build-arg ssh_pub_key="$GIT_KEY" .
+    - docker push $DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA
+  only:
+    - development
+  tags:
+    - uat-dev
+
+#############################################################################################################
+
+deploy_dev:
+  stage: update_dev
+  allow_failure: false
+  variables:
+    K8S_IMAGE: $DEPLOYMENT_NAME-image
+    AWS_ACCESS_KEY_ID: $K8S_ACC_KEY
+    AWS_SECRET_ACCESS_KEY: $K8S_SEC_KEY
+    AWS_DEFAULT_REGION: $DEF_REG
+  image:
+    name: niravthewowl/aws-cli-kubectl:1.0
+  needs: ["build_image_dev"]
+  before_script:
+    - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $CLUSTER_NAME
+  script:
+    - kubectl patch deployment $DEPLOYMENT_NAME -n $DEV_K8S_NAMESPACE -p '{"spec":{"template":{"spec":{"containers":[{"name":"'"$K8S_IMAGE"'","image":"'"$DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA"'"}]}}}}'
+  only:
+    - development
+  tags:
+    - uat-dev
+
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+
+build_image_qual:
+  stage: build_qual
+  allow_failure: false
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+    AWS_ACCESS_KEY_ID: $ECR_ACC_KEY
+    AWS_SECRET_ACCESS_KEY: $ECR_SEC_KEY
+    AWS_DEFAULT_REGION: $DEF_REG
+  services:
+    - docker:19.03.14-dind
+  image:
+    name: niravthewowl/dockerawscli:v1
+  before_script:
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+  script:
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA --build-arg prv_key="$GIT_PKEY" --build-arg ssh_pub_key="$GIT_KEY" .
+    - docker push $DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA
+  when: manual
+  only:
+    - staging
+  tags:
+    - uat-dev
+
+#############################################################################################################
+
+deploy_qual:
+  stage: update_qual
+  allow_failure: false
+  variables:
+    K8S_IMAGE: $DEPLOYMENT_NAME-image
+    AWS_ACCESS_KEY_ID: $K8S_QUA_ACC_KEY
+    AWS_SECRET_ACCESS_KEY: $K8S_QUA_SEC_KEY
+    AWS_DEFAULT_REGION: $DEF_REG
+  image:
+    name: niravthewowl/aws-cli-kubectl:1.0
+  needs: ["build_image_qual"]
+  before_script:
+    - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $CLUSTER_NAME
+  script:
+    - kubectl patch deployment $DEPLOYMENT_NAME -n $QUA_K8S_NAMESPACE -p '{"spec":{"template":{"spec":{"containers":[{"name":"'"$K8S_IMAGE"'","image":"'"$DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA"'"}]}}}}'
+  only:
+    - staging
+  tags:
+    - uat-dev
+
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+
+build_image_prod:
+  stage: build_prod
+  allow_failure: false
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+    AWS_ACCESS_KEY_ID: $ECR_ACC_KEY
+    AWS_SECRET_ACCESS_KEY: $ECR_SEC_KEY
+    AWS_DEFAULT_REGION: $DEF_REG
+  services:
+    - docker:19.03.14-dind
+  image:
+    name: niravthewowl/dockerawscli:v1
+  before_script:
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+  script:
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA-$CI_COMMIT_TAG --build-arg prv_key="$GIT_PKEY" --build-arg ssh_pub_key="$GIT_KEY" .
+    - docker push $DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA-$CI_COMMIT_TAG
+  when: manual
+  only:
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_TAG =~ /^[Vv]-.*/
+  tags:
+    - prod-runner
+
+#############################################################################################################
+
+deploy_on_prod:
+  stage: deploy_prod
+  allow_failure: false
+  variables:
+    K8S_IMAGE: $DEPLOYMENT_NAME-image
+    AWS_ACCESS_KEY_ID: $K8S_PROD_ACC_KEY
+    AWS_SECRET_ACCESS_KEY: $K8S_PROD_SEC_KEY
+    AWS_DEFAULT_REGION: $DEF_REG
+  image:
+    name: niravthewowl/aws-cli-kubectl:1.0
+  needs: ["build_image_prod"]
+  before_script:
+    - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $PROD_CLUSTER_NAME
+  script:
+    - kubectl patch deployment $DEPLOYMENT_NAME -n $PROD_K8S_NAMESPACE -p '{"spec":{"template":{"spec":{"containers":[{"name":"'"$K8S_IMAGE"'","image":"'"$DOCKER_REGISTRY/$APP_NAME:$CI_COMMIT_SHORT_SHA-$CI_COMMIT_TAG"'"}]}}}}'
+  only:
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_TAG =~ /^[Vv]-.*/
+  tags:
+    - prod-runner
+
+
+deploy_ahpi_dev:
+  stage: deploy_ahpi_dev
+  variables:
+    ID_RSA_NAME: $CI_PROJECT_PATH_SLUG"_dev"
+  environment:
+    name: development
+    url: https://ahpi.knovator.in
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo -e "$STAGE_SSH_KEY" > ~/.ssh/$ID_RSA_NAME
+    - chmod 600 ~/.ssh/$ID_RSA_NAME
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  script:
+    - ssh -i "~/.ssh/$ID_RSA_NAME" "$STAGE_USER_NAME"@"$STAGE_SERVER_HOST" "cd $AHPI_PATH && git fetch origin ahpi-development && git checkout ahpi-development && git pull origin ahpi-development && yarn install && npm run build && pm2 reload '7087-ahpi' && exit"
+  only:
+    - ahpi-development

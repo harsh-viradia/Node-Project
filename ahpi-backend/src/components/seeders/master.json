@@ -1,0 +1,450 @@
+[
+  {
+    "code": "BADGE",
+    "name": "Badge",
+    "canDel": false,
+    "subMaster": [
+      {
+        "code": "BEST_RATED",
+        "name": "Best Rated",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "BADGE"
+      },
+      {
+        "code": "HOT_SELLING",
+        "name": "Hot Selling",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "BADGE"
+      },
+      {
+        "code": "NEW_PUBLISHED",
+        "name": "New Published",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "BADGE"
+      }
+    ]
+  },
+  {
+    "name": "General Notification Criteria",
+    "code": "GENERAL_NOTIFICATION_CRITERIA",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "All",
+        "code": "GENERAL_NOTIFICATION_ALL",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "GENERAL_NOTIFICATION_CRITERIA"
+      },
+      {
+        "name": "Selected User",
+        "code": "SELECTED_USER",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "GENERAL_NOTIFICATION_CRITERIA"
+      },
+      {
+        "name": "Previous Order",
+        "code": "PREVIOUS_ORDER",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "GENERAL_NOTIFICATION_CRITERIA"
+      },
+      {
+        "name": "Cart",
+        "code": "CART",
+        "seq": 4,
+        "canDel": false,
+        "parentCode": "GENERAL_NOTIFICATION_CRITERIA"
+      },
+      {
+        "name": "Wishlist",
+        "code": "WISHLIST",
+        "seq": 5,
+        "canDel": false,
+        "parentCode": "GENERAL_NOTIFICATION_CRITERIA"
+      }
+    ]
+  },
+  {
+    "name": "Floating Notification Criteria",
+    "code": "FLOATING_NOTIFICATION_CRITERIA",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "Pages",
+        "code": "PAGES",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "FLOATING_NOTIFICATION_CRITERIA"
+      },
+      {
+        "name": "Courses",
+        "code": "COURSES",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "FLOATING_NOTIFICATION_CRITERIA"
+      },
+      {
+        "name": "Categories",
+        "code": "CATEGORIES",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "FLOATING_NOTIFICATION_CRITERIA"
+      }
+    ]
+  },
+  {
+    "name": "User Types",
+    "code": "USER_TYPE",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "All",
+        "code": "USER_TYPE_ALL",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "USER_TYPE"
+      },
+      {
+        "name": "Logged In User",
+        "code": "LOGGEDIN_USER",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "USER_TYPE"
+      },
+      {
+        "name": "Guest User",
+        "code": "GUEST_USER",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "USER_TYPE"
+      }
+    ]
+  },
+  {
+    "name": "Coupon Criteria",
+    "code": "COUPON_CRITERIA",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "All",
+        "code": "COUPON_CRITERIA_ALL",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "COUPON_CRITERIA"
+      },
+      {
+        "name": "Courses",
+        "code": "COUPON_CRITERIA_COURSES",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "COUPON_CRITERIA"
+      },
+      {
+        "name": "Categories",
+        "code": "COUPON_CRITERIA_CATEGORIES",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "COUPON_CRITERIA"
+      }
+    ]
+  },
+  {
+    "name": "Coupon Type",
+    "code": "COUPON_TYPE",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "Buy X Get X",
+        "code": "BUY_X_GET_X",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "COUPON_TYPE"
+      },
+      {
+        "name": "Flat Discount",
+        "code": "FLAT_DISCOUNT",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "COUPON_TYPE"
+      },
+      {
+        "name": "Percentage(%) Discount",
+        "code": "PERCENTAGE_DISCOUNT",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "COUPON_TYPE"
+      }
+    ]
+  },
+  {
+    "name": "Currency",
+    "code": "CURRENCY",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "IDR",
+        "code": "IDR",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "CURRENCY"
+      },
+      {
+        "name": "INR",
+        "code": "INR",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "CURRENCY"
+      },
+      {
+        "name": "USD",
+        "code": "USD",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "CURRENCY"
+      }
+    ]
+  },
+  {
+    "name": "Eligible",
+    "code": "ELIGIBLE",
+    "canDel":false,
+    "subMaster": [
+      {
+        "name": "Healthcare Professionals Including Clinicians",
+        "code": "HPIC",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "ELIGIBLE"
+      },
+      {
+        "name": "Administrators",
+        "code": "ADMINISTRATORS",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "ELIGIBLE"
+      },
+      {
+        "name": "Nurses and Staff from Diagnostics",
+        "code": "NASFD",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "ELIGIBLE"
+      },
+      {
+        "name": "Pharmacy",
+        "code": "PHARMACY",
+        "seq": 4,
+        "canDel": false,
+        "parentCode": "ELIGIBLE"
+      },
+      {
+        "name": "Quality",
+        "code": "QA",
+        "seq": 5,
+        "canDel": false,
+        "parentCode": "ELIGIBLE"
+      },
+      {
+        "name": "Facility",
+        "code": "FACILITY",
+        "seq": 6,
+        "canDel": false,
+        "parentCode": "ELIGIBLE"
+      },
+      {
+        "name": "Housekeeping",
+        "code": "HOUSEKEEPING",
+        "seq": 7,
+        "canDel": false,
+        "parentCode": "ELIGIBLE"
+      },
+      {
+        "name": "Maintenance and Marketing",
+        "code": "MAM",
+        "seq": 8,
+        "canDel": false,
+        "parentCode": "ELIGIBLE"
+      }
+    ]
+  },
+  {
+    "name": "Topics",
+    "code": "TOPICS",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "Heart",
+        "code": "HEART",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "TOPICS"
+      },
+      {
+        "name": "brain",
+        "code": "BRAIN",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "TOPICS"
+      }
+    ]
+  },
+  {
+    "name": "Level",
+    "code": "LEVEL",
+    "canDel": false,
+    "subMaster":[
+      {
+        "name": "Beginner",
+        "code": "BEGINNER",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "LEVEL"
+      },
+      {
+        "name": "Intermediate",
+        "code": "INTERMEDIATE",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "LEVEL"
+      },
+      {
+        "name": "Expert",
+        "code": "EXPERT",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "LEVEL"
+      },
+      {
+        "name": "All Levels",
+        "code": "ALL_LEVEL",
+        "seq": 4,
+        "canDel": false,
+        "parentCode": "LEVEL"
+      }
+    ]
+  },
+  {
+    "name": "Question Type",
+    "code": "QUESTION_TYPE",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "MCQ",
+        "code": "MCQ",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "QUESTION_TYPE"
+      },
+      {
+        "name": "MSQ",
+        "code": "MSQ",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "QUESTION_TYPE"
+      }
+    ]
+  },
+  {
+    "name": "Payment Status",
+    "code": "PAYMENT_STATUS",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "Success",
+        "code": "SUCCESS",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "PAYMENT_STATUS"
+      },
+      {
+        "name": "Failed",
+        "code": "FAILED",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "PAYMENT_STATUS"
+      },
+      {
+        "name": "Pending",
+        "code": "PENDING",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "PAYMENT_STATUS"
+      }
+    ]
+  },
+  {
+    "name": "Languages",
+    "code": "LANGUAGES",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "English",
+        "code": "ENGLISH",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "LANGUAGES"
+      }
+    ] 
+  },
+  {
+    "name": "widget type",
+    "code": "WIDGET_TYPE",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "Course",
+        "code": "COURSE",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "WIDGET_TYPE"
+      },
+      {
+        "name": "Category",
+        "code": "CATEGORY",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "WIDGET_TYPE"
+      },
+      {
+        "name": "Image",
+        "code": "IMAGE",
+        "seq": 3,
+        "canDel": false,
+        "parentCode": "WIDGET_TYPE"
+      },
+      {
+        "name": "Reviews",
+        "code": "REVIEWS",
+        "seq": 4,
+        "canDel": false,
+        "parentCode": "WIDGET_TYPE"
+      }
+    ]
+  },
+  {
+    "name": "designation type",
+    "code": "DESIGNATION_TYPE",
+    "canDel": false,
+    "subMaster": [
+      {
+        "name": "Student",
+        "code": "STUDENT",
+        "seq": 1,
+        "canDel": false,
+        "parentCode": "DESIGNATION_TYPE"
+      },
+      {
+        "name": "Working professional",
+        "code": "WORKING_PROFESSIONAL",
+        "seq": 2,
+        "canDel": false,
+        "parentCode": "DESIGNATION_TYPE"
+      }
+    ]
+  }
+]

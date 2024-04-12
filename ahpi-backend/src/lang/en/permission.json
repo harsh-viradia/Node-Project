@@ -1,0 +1,8 @@
+{
+  "permission": {
+    "permissionupdate": "Permission updated!",
+    "permissionError": "Permission can't be change.",
+    "permissionNotFound": "Permission not found!",
+    "permissionFind": "Role permissions fetched successfully."
+  }
+}

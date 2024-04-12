@@ -1,0 +1,11 @@
+{
+  "purchaseHistory": "Purchase History",
+  "orderOn": "Ordered On",
+  "total": "Total Price",
+  "orderId": "Order ID",
+  "DownloadInvoice": "Download Invoice",
+  "RepeatOrder": "Repeat Order",
+  "OrderPlaced": "Order Placed",
+  "eleMents": "Elements",
+  "noRecordFound": "No Record Found"
+}

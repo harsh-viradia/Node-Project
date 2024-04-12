@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "Q76MU47986.com.orbitskills.knovator"
+        ],
+        "components": [
+          {
+            "/": "/*",
+            "comment": "Matches any URL with a path that starts with /*"
+          }
+        ]
+      }
+    ]
+  }
+}

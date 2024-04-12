@@ -1,0 +1,1406 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1663579177689.png" />
+  <title>Orbit Skills Invoice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <style>
+    .invoice-container {
+      max-width: 100%;
+      margin: auto;
+      padding: 30px;
+      font-size: 12px;
+      line-height: 24px;
+      font-family: 'Roboto', sans-serif;
+      color: #000;
+    }
+
+    @page {
+      margin: 20px;
+
+    }
+
+    #pageNumber:before {
+      content: "Page " counter(page) " of " counter(pages);
+    }
+
+
+    .invoice-box {
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .invoice-box table {
+      line-height: inherit;
+      text-align: left;
+    }
+
+    .invoice-box table td {
+      vertical-align: top;
+    }
+
+    .invoice-box table tr.top table {
+      border-bottom: 1px solid #000;
+    }
+
+    .invoice-box table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+    }
+
+    .invoice-box table tr.heading {
+      font-size: 14px;
+    }
+
+    .invoice-box table tr.product-list {
+      font-size: 14px;
+    }
+
+    table.product-details td,
+    table.product-details th {
+      border: 1px solid #f1f1f1;
+    }
+
+    /* .product-td {
+            border-bottom: 1px solid #000;
+        } */
+
+    .product-td td {
+      height: 200px;
+    }
+
+    .product-td td:last-child {
+      border: none;
+    }
+
+    .bank-details {
+      font-size: 14px;
+    }
+
+    .bank-details th {
+      border-bottom: 1px solid #000;
+      text-align: left;
+    }
+
+    .final-Amount th {
+      text-align: left;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body style="margin: 0px">
+  <div class="invoice-container" style="
+        max-width: 100%;
+        margin: auto;
+        padding: 0;
+        font-size: 12px;
+        line-height: 18px;
+        font-family: 'Roboto', sans-serif;
+        color: #000;
+        font-weight: 400;
+        border-top: 6px solid #40b5e8;
+        height: 100vh;
+      ">
+    <div class="invoice-box" style="display: block; max-width: 100%; height: calc(100% - 70px);">
+      <table cellpadding="0" cellspacing="0"
+        style="line-height: inherit; text-align: left; width: 100%; width: -webkit-fill-available;">
+        <tr class="head-info">
+          <td colspan="2" style="vertical-align: top; padding: 0 1rem 1rem">
+
+            <table id="pageHeader" style="
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  border-collapse: collapse;
+                  margin: 1rem 0;
+                ">
+              <tbody>
+                <tr style="font-size: 12px;">
+                  <td style="
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 60%;
+                      ">
+                    <img src="logo.png" style="height: 45px" alt="Orbit Skills" />
+                  </td>
+                  <td style="vertical-align: top; text-align: right; width: 60%;">
+                    <div style="float: right;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">
+                        PT Orbit Ventura Indonesia
+                      </p>
+                      <p style="font-size: 12px; color: #555">
+                        DBS Bank Tower 28th Floor Ciputra World One <br />Complex jl.Prof Dr.Satrio No. 18 Jakarta,
+                        Indonesia.
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 0.5rem;
+                  background-color: #f8f8f8;
+                ">
+              <tbody>
+                <tr style="font-size: 12px;">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 50%;
+                        padding: 1rem;
+                      ">
+                    <p style="font-size: 12px;">Invoice ID : <span style="color: #40b5e8">
+                        <%= invNo %>
+                      </span></p>
+                  </td>
+                  <td style="vertical-align: top; text-align: right; width: 50%; padding: 1rem;">
+                    <p style="font-size: 12px;font-weight: 600;">Date : <%= date %>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="
+                  width: -webkit-fill-available;
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 1rem;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="
+                    line-height: inherit;
+                    text-align: left;
+                    padding: 0 5px;
+                    margin-top: 1rem;
+                  ">
+                <tr style="font-size: 14px; padding: 1rem 0">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 25%;
+                      ">
+                    <div style="padding: 1rem 0;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Invoice to</p>
+                      <p style="font-size: 13px; color: #555; font-weight: 600;">
+                        <%= name %>
+                      </p>
+                      <p style=" color: #555; font-size: 12px">
+                        <%= email %>
+                      </p>
+                    </div>
+                  </td>
+                  <td style="vertical-align: top; text-align: left; width: 25%">
+                    <div style="padding: 1rem 0.8rem;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Address</p>
+                      <p style="font-size: 12px; color: #555;">
+                        <%= address %>
+                      </p>
+                    </div>
+                  </td>
+                  <td style="vertical-align: top; text-align: left; width: 25%">
+                    <div style="padding: 1rem 0 1rem 0.8rem;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Phone</p>
+                      <p style="font-size: 12px; color: #555;">+<%= countryCode %>
+                          <%= phone %>
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="product-details" style="
+                  border-collapse: collapse;
+                  line-height: inherit;
+                  text-align: left;
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  margin-bottom: 15px;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="border: 1px solid #f1f1f1">
+                <tr style="background-color: #f8f8f8">
+                  <th style="border-left: none; padding: 0.5rem; width: 40%;">
+                    <b>Course detail</b>
+                  </th>
+                  <th style="border-right: 0; padding: 0.5rem; width: 10%;"><b>Qty</b></th>
+                  <th style="border-right: 0; padding: 0.5rem; width: 25%;"><b>Price</b></th>
+                </tr>
+                <% courses.map(function(course) { %>
+                  <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                        ">
+                      <%= course.nm %>
+                    </td>
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                        ">
+                      01
+                    </td>
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                      ">
+                      ₹ <%= course.price %>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+
+
+            <table style="
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 1rem;
+                  float: left;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="
+                    line-height: inherit;
+                    text-align: left;
+                    padding: 0 5px;
+                    margin-top: 1rem;
+                  ">
+                <tr style="font-size: 14px; padding: 1rem 0">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                      ">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+            <table class="product-details" style="
+                  border-collapse: collapse;
+                  line-height: inherit;
+                  text-align: left;
+                  float: right;
+                  width: 50%;
+                  margin-bottom: 0.3rem;
+                ">
+              <tbody style="border: 1px solid #f1f1f1">
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Tax</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>
+                      <%= tax %> %
+                    </b>
+                  </td>
+                </tr>
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Sub Total</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>₹ <%= subTotal %></b>
+                  </td>
+                </tr>
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1; background-color: #f8f8f8">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b style="font-size: 14px; font-weight: 900;">Total</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b style="font-size: 14px; font-weight: 900;">₹ <%= total %></b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="width: 100%; margin-top: 10px; vertical-align: middle;">
+              <tr>
+                <td style="width: 25%;padding-top: 20px; vertical-align: middle;">
+                  <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Payment Method</p>
+                  <p style="font-size: 12px; color: #555">
+                    <%= paymentType %>
+                  </p>
+                </td>
+                <td style="width: 25%;padding-top: 20px; vertical-align: middle;">
+                  <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Transaction status</p>
+                  <p style="font-size: 12px; color: #555">
+                    <%= transactionSts %>
+                  </p>
+                </td>
+                <td style="width: 50%;padding-top: 20px; vertical-align: middle;">
+                  <div style="text-align: right">
+                    <img src="sign.png" style="width: 80px" alt="Signature">
+                    <p style="font-size: 12px; color: #555;">
+                      *This is computered generated statement, does not
+                      require signature*
+                    </p>
+                  </div>
+                </td>
+          </td>
+        </tr>
+      </table>
+      <table style="width: 100%">
+        <tr>
+          <td style="padding-top: 20px">
+            <div style="float: left">
+              <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Transaction ID</p>
+              <p style="color: #555; font-size: 12px;">
+                <%= transNo %>
+              </p>
+            </div>
+          </td>
+        </tr>
+      </table>
+      </td>
+      </tr>
+      </table>
+    </div>
+    <div>
+      <table id="pageFooter" style="
+            line-height: inherit;
+            text-align: left;
+            position: absolute;
+             bottom: 0;
+            padding: 0.8rem 1rem;
+            border-top: 1px solid #f1f1f1;
+            border-bottom: 1px solid #f1f1f1;
+            width: 100%;
+          ">
+        <tbody>
+          <tr>
+            <td style="vertical-align: middle; display: inline">
+              <p style="color: #999999; float: left">
+                Contact Orbit LMS: 1800 208 9898
+              </p>
+              <p style="color: #999999; float: right" id="pageNumber"></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="https://ahpi.s3.amazonaws.com/images/1695300508412.png" />
+  <title>AHPI Academy Invoice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <style>
+    .invoice-container {
+      max-width: 100%;
+      margin: auto;
+      padding: 30px;
+      font-size: 12px;
+      line-height: 24px;
+      font-family: 'Roboto', sans-serif;
+      color: #000;
+    }
+
+    @page {
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+    .invoice-box {
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .invoice-box table {
+      line-height: inherit;
+      text-align: left;
+    }
+
+    .invoice-box table td {
+      vertical-align: top;
+    }
+
+    .invoice-box table tr.top table {
+      border-bottom: 1px solid #000;
+    }
+
+    .invoice-box table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+    }
+
+    .invoice-box table tr.heading {
+      font-size: 14px;
+    }
+
+    .invoice-box table tr.product-list {
+      font-size: 14px;
+    }
+
+    table.product-details td,
+    table.product-details th {
+      border: 1px solid #f1f1f1;
+    }
+
+    .product-td {
+            border-bottom: 1px solid #000;
+    }
+
+    .product-td td {
+      height: 200px;
+    }
+
+    .product-td td:last-child {
+      border: none;
+    }
+
+    .bank-details {
+      font-size: 14px;
+    }
+
+    .bank-details th {
+      border-bottom: 1px solid #000;
+      text-align: left;
+    }
+
+    .final-Amount th {
+      text-align: left;
+    }
+
+    .footer-page-no {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body style="margin: 0px">
+  <div class="invoice-container" style="
+        max-width: 100%;
+        margin: auto;
+        padding: 0;
+        font-size: 12px;
+        line-height: 18px;
+        font-family: 'Roboto', sans-serif;
+        color: #000;
+        font-weight: 400;
+        border-top: 6px solid #40B5E8;
+        height: 100%;
+      ">
+    <div class="invoice-box" style="display: block; max-width: 100%; height: calc(100% - 70px);">
+      <table cellpadding="0" cellspacing="0" style="line-height: inherit; text-align: left; width: 100%; width: -webkit-fill-available;">
+        <tr class="head-info">
+          <td colspan="2" style="vertical-align: top; padding: 0 1rem 1rem">
+            
+            <table id="pageHeader" style="
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  border-collapse: collapse;
+                  margin: 1rem 0;
+                ">
+              <tbody>
+                <tr style="font-size: 12px;">
+                  <td style="
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 60%;
+                      ">
+                    <img src="https://ahpi.s3.amazonaws.com/images/1695300508412.png" style="height: 45px" alt="AHPI" />
+                  </td>
+                  <td style="vertical-align: top; text-align: right; width: 60%;">
+                    <div style="float: right;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">
+                        AHPI Academy India
+                      </p>
+                      <p style="font-size: 12px; color: #555">
+                        Second Floor, Indian Medical Association House, <br />Indraprastha Marg New Delhi -110002
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 0.5rem;
+                  background-color: #f8f8f8;
+                ">
+              <tbody>
+                <tr style="font-size: 12px;">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 50%;
+                        padding: 1rem;
+                      ">
+                    <p style="font-size: 12px;">Invoice ID : <span style="color: #40B5E8"><%= invNo %></span></p>
+                  </td>
+                  <td style="vertical-align: top; text-align: right; width: 50%; padding: 1rem;">
+                    <p style="font-size: 12px;font-weight: 600;">Date : <%= date %></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="
+                  width: -webkit-fill-available;
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 1rem;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="
+                    line-height: inherit;
+                    text-align: left;
+                    padding: 0 5px;
+                    margin-top: 1rem;
+                  ">
+                <tr style="font-size: 14px; padding: 1rem 0">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 25%;
+                      ">
+                    <div style="padding: 1rem 0;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Invoice to</p>
+                      <p style="font-size: 13px; color: #555; font-weight: 600;"><%= name %></p>
+                      <p style=" color: #555; font-size: 12px">
+                        <%= email %>
+                      </p>
+                    </div>
+                  </td>
+                  <td style="vertical-align: top; text-align: left; width: 25%">
+                    <div style="padding: 1rem 0.8rem;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Address</p>
+                      <p style="font-size: 12px; color: #555;">
+                        <%= address %>
+                      </p>
+                    </div>
+                  </td>
+                  <td style="vertical-align: top; text-align: left; width: 25%">
+                    <div style="padding: 1rem 0 1rem 0.8rem;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Phone</p>
+                      <p style="font-size: 12px; color: #555;">+<%= countryCode %> <%= phone %></p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="product-details" style="
+                  border-collapse: collapse;
+                  line-height: inherit;
+                  text-align: left;
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  margin-bottom: 15px;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="border: 1px solid #f1f1f1">
+                <tr style="background-color: #f8f8f8">
+                  <th style="border-left: none; padding: 0.5rem; width: 40%;">
+                    <b>Course detail</b>
+                  </th>
+                  <th style="border-right: 0; padding: 0.5rem; width: 10%;"><b>Qty</b></th>
+                  <th style="border-right: 0; padding: 0.5rem; width: 25%;"><b>Price</b></th>
+                </tr>
+                <% courses.map(function(course) { %>
+                  <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                        ">
+                      <%= course.nm %>
+                    </td>
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                        ">
+                      01
+                    </td>
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                      ">
+                      ₹ <%= course.price %>
+                    </td>
+                  </tr>
+               <% }) %>
+              </tbody>
+            </table>
+
+
+            <table style="
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 1rem;
+                  float: left;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="
+                    line-height: inherit;
+                    text-align: left;
+                    padding: 0 5px;
+                    margin-top: 1rem;
+                  ">
+                <tr style="font-size: 14px; padding: 1rem 0">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                      ">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+            <table class="product-details" style="
+                  border-collapse: collapse;
+                  line-height: inherit;
+                  text-align: left;
+                  float: right;
+                  width: 50%;
+                  margin-bottom: 0.3rem;
+                ">
+              <tbody style="border: 1px solid #f1f1f1">
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Sub Total</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>₹ <%= subTotal %></b>
+                  </td>
+                </tr>
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Coupon Discount</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b><%= coupon_disc %></b>
+                  </td>
+                </tr>
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Reward Points Discount</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b><%= reward_points %></b>
+                  </td>
+                </tr>
+
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Tax</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b><%= tax %> %</b>
+                  </td>
+                </tr>
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1; background-color: #f8f8f8">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b style="font-size: 14px; font-weight: 900;">Total</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b style="font-size: 14px; font-weight: 900;">₹ <%= total %></b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="width: 100%; margin-top: 10px; vertical-align: middle;">
+              <tr>
+                <td style="width: 25%;padding-top: 20px; vertical-align: middle;">
+                  <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Payment Method</p>
+                  <p style="font-size: 12px; color: #555"><%= paymentType %></p>
+                </td>
+                <td style="width: 25%;padding-top: 20px; vertical-align: middle;">
+                  <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Transaction status</p>
+                  <p style="font-size: 12px; color: #555"><%= transactionSts %></p>
+                </td>
+                <td style="width: 50%;padding-top: 20px; vertical-align: middle;">
+                  <div style="text-align: right">
+                    <img src="https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1665731277516.png" style="width: 80px" alt="Signature" >
+                    <p style="font-size: 12px; color: #555;">
+                      *This is computered generated statement, does not
+                      require signature*
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table style="width: 100%; margin-top: 10px; vertical-align: middle;">
+              <tr>
+                <td style="width: 25%;padding-top: 20px; vertical-align: middle;">
+                    <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Transaction ID</p>
+                    <p style="font-size: 12px; color: #555"><%= transNo %></p>
+                </td>
+              </tr>
+            </table>
+      </td>
+      </tr>
+      </table>
+    </div>
+    <div class="footer-page-no">
+      <table id="pageFooter"   style="
+            line-height: inherit;
+            text-align: left;
+            padding: 0 5px;
+            position: relative;
+            padding: 0.8rem 1rem;
+            border-top: 1px solid #f1f1f1;
+            border-bottom: 1px solid #f1f1f1;
+            width: 100%;
+          ">
+      <tbody>       
+        <tr>
+          <td style="vertical-align: middle; display: inline">
+            <p style="color: #999999; float: left">
+              Contact AHPI Academy: 011 43095694
+            </p>
+            <p style="color: #999999; float: right">Page 1 of 1</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+  </div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="https://ahpi.s3.amazonaws.com/images/1695300508412.png" />
+  <title>AHPI Academy Invoice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <style>
+    .invoice-container {
+      max-width: 100%;
+      margin: auto;
+      padding: 30px;
+      font-size: 12px;
+      line-height: 24px;
+      font-family: 'Roboto', sans-serif;
+      color: #000;
+    }
+
+    @page {
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+    .invoice-box {
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .invoice-box table {
+      line-height: inherit;
+      text-align: left;
+    }
+
+    .invoice-box table td {
+      vertical-align: top;
+    }
+
+    .invoice-box table tr.top table {
+      border-bottom: 1px solid #000;
+    }
+
+    .invoice-box table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+    }
+
+    .invoice-box table tr.heading {
+      font-size: 14px;
+    }
+
+    .invoice-box table tr.product-list {
+      font-size: 14px;
+    }
+
+    table.product-details td,
+    table.product-details th {
+      border: 1px solid #f1f1f1;
+    }
+
+    .product-td {
+            border-bottom: 1px solid #000;
+    }
+
+    .product-td td {
+      height: 200px;
+    }
+
+    .product-td td:last-child {
+      border: none;
+    }
+
+    .bank-details {
+      font-size: 14px;
+    }
+
+    .bank-details th {
+      border-bottom: 1px solid #000;
+      text-align: left;
+    }
+
+    .final-Amount th {
+      text-align: left;
+    }
+
+    .footer-page-no {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body style="margin: 0px">
+  <div class="invoice-container" style="
+        max-width: 100%;
+        margin: auto;
+        padding: 0;
+        font-size: 12px;
+        line-height: 18px;
+        font-family: 'Roboto', sans-serif;
+        color: #000;
+        font-weight: 400;
+        border-top: 6px solid #40B5E8;
+        height: 100%;
+      ">
+    <div class="invoice-box" style="display: block; max-width: 100%; height: calc(100% - 70px);">
+      <table cellpadding="0" cellspacing="0" style="line-height: inherit; text-align: left; width: 100%; width: -webkit-fill-available;">
+        <tr class="head-info">
+          <td colspan="2" style="vertical-align: top; padding: 0 1rem 1rem">
+            
+            <table id="pageHeader" style="
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  border-collapse: collapse;
+                  margin: 1rem 0;
+                ">
+              <tbody>
+                <tr style="font-size: 12px;">
+                  <td style="
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 60%;
+                      ">
+                     <img src="https://ahpi.s3.amazonaws.com/images/1695300508412.png" style="height: 45px; margin-right: 5px;" alt="AHPI" />
+                    <img src="https://ahpi.s3.ap-south-1.amazonaws.com/images/1696330797337.png" style="height: 45px; margin-left: 5px;" alt="AHPI" />
+                  </td>
+                  <td style="vertical-align: top; text-align: right; width: 60%;">
+                    <div style="float: right;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">
+                        Knovator Technologies India
+                      </p>
+                      <p style="font-size: 12px; color: #555">
+                        RamKrishna Society, First Floor, B/45-46, Lambe Hanuman Rd, <br />near Ram Krushna School, Surat, Gujarat 395006
+                      </p style="font-size: 12px; color: #555">
+                      <strong>GST : </strong> 24AAJCK0132D1Z6
+                      <p>
+
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 0.5rem;
+                  background-color: #f8f8f8;
+                ">
+              <tbody>
+                <tr style="font-size: 12px;">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 50%;
+                        padding: 1rem;
+                      ">
+                    <p style="font-size: 12px;">Invoice ID : <span style="color: #40B5E8"><%= invNo %></span></p>
+                  </td>
+                  <td style="vertical-align: top; text-align: right; width: 50%; padding: 1rem;">
+                    <p style="font-size: 12px;font-weight: 600;">Date : <%= date %></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="
+                  width: -webkit-fill-available;
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 1rem;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="
+                    line-height: inherit;
+                    text-align: left;
+                    padding: 0 5px;
+                    margin-top: 1rem;
+                  ">
+                <tr style="font-size: 14px; padding: 1rem 0">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                        width: 25%;
+                      ">
+                    <div style="padding: 1rem 0;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Invoice to</p>
+                      <p style="font-size: 13px; color: #555; font-weight: 600;"><%= name %></p>
+                      <p style=" color: #555; font-size: 12px">
+                        <%= email %>
+                      </p>
+                    </div>
+                  </td>
+                  <td style="vertical-align: top; text-align: left; width: 25%">
+                    <div style="padding: 1rem 0.8rem;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Address</p>
+                      <p style="font-size: 12px; color: #555;">
+                        <%= address %>
+                      </p>
+                    </div>
+                  </td>
+                  <td style="vertical-align: top; text-align: left; width: 25%">
+                    <div style="padding: 1rem 0 1rem 0.8rem;">
+                      <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Phone</p>
+                      <p style="font-size: 12px; color: #555;">+<%= countryCode %> <%= phone %></p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="product-details" style="
+                  border-collapse: collapse;
+                  line-height: inherit;
+                  text-align: left;
+                  float: left;
+                  width: 100%;
+                  width: -webkit-fill-available;
+                  margin-bottom: 15px;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="border: 1px solid #f1f1f1">
+                <tr style="background-color: #f8f8f8">
+                  <th style="border-left: none; padding: 0.5rem; width: 40%;">
+                    <b>Course detail</b>
+                  </th>
+                  <th style="border-right: 0; padding: 0.5rem; width: 10%;"><b>Qty</b></th>
+                  <th style="border-right: 0; padding: 0.5rem; width: 25%;"><b>Price</b></th>
+                </tr>
+                <% courses.map(function(course) { %>
+                  <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                        ">
+                      <%= course.nm %>
+                    </td>
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                        ">
+                      01
+                    </td>
+                    <td style="
+                          padding: 0 10px;
+                          height: 15px;
+                          vertical-align: middle;
+                          padding: 0.5rem;
+                          color: #555
+                      ">
+                      ₹ <%= course.price %>
+                    </td>
+                  </tr>
+               <% }) %>
+              </tbody>
+            </table>
+
+
+            <table style="
+                  margin-top: 0.5rem;
+                  border-collapse: collapse;
+                  margin-bottom: 1rem;
+                  float: left;
+                  background-color: #ffffffc4;
+                ">
+              <tbody style="
+                    line-height: inherit;
+                    text-align: left;
+                    padding: 0 5px;
+                    margin-top: 1rem;
+                  ">
+                <tr style="font-size: 14px; padding: 1rem 0">
+                  <td style="
+                        vertical-align: top;
+                        text-align: left;
+                        width: -webkit-fill-available;
+                      ">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+            <table class="product-details" style="
+                  border-collapse: collapse;
+                  line-height: inherit;
+                  text-align: left;
+                  float: right;
+                  width: 50%;
+                  margin-bottom: 0.3rem;
+                ">
+              <tbody style="border: 1px solid #f1f1f1">
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Sub Total</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>₹ <%= subTotal %></b>
+                  </td>
+                </tr>
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Coupon Discount</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>₹ <%= coupon_disc %></b>
+                  </td>
+                </tr>
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Reward Points Discount</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>₹ <%= reward_points %></b>
+                  </td>
+                </tr>
+
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b>Tax</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b><%= tax %> %</b>
+                  </td>
+                </tr>
+                <tr class="product-td" style="border-bottom: 1px solid #f1f1f1; background-color: #f8f8f8">
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b style="font-size: 14px; font-weight: 900;">Total</b>
+                  </td>
+                  <td style="
+                        padding: 0.5rem;
+                        height: auto;
+                        vertical-align: middle;
+                        width: 50%;
+                      ">
+                    <b style="font-size: 14px; font-weight: 900;">₹ <%= total %></b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table style="width: 100%; margin-top: 10px; vertical-align: middle;">
+              <tr>
+                <td style="width: 25%;padding-top: 20px; vertical-align: middle;">
+                  <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Payment Method</p>
+                  <p style="font-size: 12px; color: #555"><%= paymentType %></p>
+                </td>
+                <td style="width: 25%;padding-top: 20px; vertical-align: middle;">
+                  <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Transaction status</p>
+                  <p style="font-size: 12px; color: #555"><%= transactionSts %></p>
+                </td>
+                <td style="width: 50%;padding-top: 20px; vertical-align: middle;">
+                  <div style="text-align: right">
+                    <img src="https://ahpi.s3.ap-south-1.amazonaws.com/images/1696332848164.png" style="width: 80px" alt="Signature" >
+                    <p style="font-size: 12px; color: #555;">
+                      *This is computered generated statement, does not
+                      require signature*
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table style="width: 100%; margin-top: 10px; vertical-align: middle;">
+              <tr>
+                <td style="width: 25%;padding-top: 20px; vertical-align: middle;">
+                    <p style="font-size: 12px; font-weight: 800; margin-bottom: 4px;">Transaction ID</p>
+                    <p style="font-size: 12px; color: #555"><%= transNo %></p>
+                </td>
+              </tr>
+            </table>
+      </td>
+      </tr>
+      </table>
+    </div>
+    <div class="footer-page-no">
+      <table id="pageFooter"   style="
+            line-height: inherit;
+            text-align: left;
+            padding: 0 5px;
+            position: relative;
+            padding: 0.8rem 1rem;
+            border-top: 1px solid #f1f1f1;
+            border-bottom: 1px solid #f1f1f1;
+            width: 100%;
+          ">
+      <tbody>       
+        <tr>
+          <td style="vertical-align: middle; display: inline">
+            <p style="color: #999999; float: left">
+                AHPI Academy: 011 43095694
+            </p>
+            <p style="color: #999999; float: right">Page 1 of 1</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+  </div>
+</body>
+
+</html>

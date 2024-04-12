@@ -1,0 +1,23 @@
+{
+  "specificMsg": {
+    "seoUpdate": "SEO telah berhasil diperbarui.",
+    "seoExists": "SEO sudah ada.",
+    "emptyData": "Data tidak tersedia.",
+    "enable": "Unduh diaktifkan.",
+    "disable": "Unduh dinonaktifkan.",
+    "answered": "Anda menjawab pertanyaan itu.",
+    "publishErr": "Anda tidak dapat memublikasikan pelatihan karena video yang Anda unggah sedang dalam proses. Silakan coba setelah beberapa detik.",
+    "passingScoreErr": "Terjadi masalah saat mempublikasikan kursus karena skor lulus tidak sesuai dengan skor kuis dalam {material} di dalam {section}",
+    "activateErr": "Anda tidak dapat mengaktifkan kursus ini karena ada dalam draf.",
+    "validPrice": "Harga jual harus lebih kecil atau sama dengan MRP.",
+    "validPriceTier": "Tingkat harga jual harus kurang dari atau sama dengan MRP.",
+    "notificationRead": "Notifikasi berhasil dibaca.",
+    "couponApplied": "Kupon berhasil diterapkan.",
+    "couponExpire": "Kode kupon kedaluwarsa.",
+    "couponInvalid": "Kode kupon tidak valid.",
+    "couponInvalidForUser": "Kode kupon yang dimasukkan tidak valid untuk pengguna ini.",
+    "couponInvalidForCourse": "Kode kupon yang dimasukkan tidak valid untuk kursus ini.",
+    "couponInvalidForCategory": "Kode kupon yang dimasukkan tidak valid untuk kategori ini.",
+    "emptyCartCoupon": "Keranjang Anda kosong. Harap tambahkan pelatihan ke keranjang sebelum menerapkan kupon."
+  }
+}

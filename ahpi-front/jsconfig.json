@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "esnext",
+    "jsx": "react",
+    "paths": {
+      "components/*": ["components/*"],
+      "hooks/*": ["hooks/*"],
+      "widgets/*": ["widgets/*"],
+      "shared/*": ["shared/*"],
+      "styles/*": ["styles/*"],
+      "utils/*": ["utils/*"],
+      "images/*": ["public/images/*"],
+      "icons/*": ["icons/*"],
+      "public/*": ["public/*"]
+    }
+  }
+}

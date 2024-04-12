@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1663579177689.png"
+    />
+    <title>Orbit Skills Certificate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    /> 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        display: inline-block;
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      @page {
+        size: landscape;
+        height: 765px;
+        width: 1060px;
+        margin: 0;
+      }
+
+      .main-bg {
+        background-image: url(https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1663424439265.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        min-height: 765px;
+        width: 1060px;
+        font-family: "Poppins", sans-serif;
+        position: relative;
+      }
+
+      .certificate {
+        position: relative;
+        display: inline-block;
+      }
+
+      .certificate::before {
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 30px;
+        /* background-image: url(https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1663424605612.png); */
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: -50px;
+        top: 0px;
+      }
+
+      .certificate::after {
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 30px;
+        /* background-image: url(https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1663424605612.png); */
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: -50px;
+        top: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-bg">
+      <div style="width: 100%">
+        <div style="padding: 50px 116px">
+          <div style="text-align: center; margin-top: 40px">
+            <img
+              src="https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1663229594031.png"
+              style="height: 70px"
+              alt="Orbit Skills"
+            />
+            <div style="margin-top: 10px">
+              <div class="">
+                <!-- <img
+                  src="https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1663424742754.png"
+                  style="width: 410px"
+                  alt="Certificate of Achievement"
+                /> -->
+                <h1 style="font-size: 40px">SERTIFIKAT KELULUSAN</h1>
+              </div>
+
+              <h6
+                style="
+                  color: #000;
+                  font-size: 22px;
+                  font-weight: 500;
+                  margin-top: 16px;
+                  display: block;
+                  
+                "
+              >
+                diberikan kepada:
+              </h6>
+              <h1
+                style="
+                  font-size: 40px;
+                  font-weight: 500;
+                  display: block;
+                  
+                "
+              >
+                <%= userNm %>
+              </h1>
+              <!--learner name-->
+              <p
+                style="
+                  font-size: 18px;
+                  margin: 26px 0 0 0;
+                  color: #000;
+                  font-weight: 600;
+                  
+                "
+              >
+                atas pencapaiannya dalam menyelesaikan pelatihan:
+
+                <!--NODEJS_SKILLS_214550-->
+              </p>
+              <h1
+                style="
+                  font-size: 36px;
+                  font-weight: 500;
+                  
+
+                  margin-top: 6px;
+                "
+              >
+                “<%= courseNm %>”
+              </h1>
+              <div
+                style="
+                  position: absolute;
+                  bottom: 5rem;
+                  width: 80%;
+                  margin: auto;
+                  left: 0;
+                  right: 0;
+                "
+              >
+                <div
+                  style="
+                    margin-top: 20px;
+                    text-align: left;
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 2px;
+                  "
+                ></div>
+                <div
+                  style="
+                    margin-top: 20px;
+                    text-align: left;
+                    float: left;
+                    width: 100%;
+                    position: relative;
+                  "
+                >
+                  <div style="float: left">
+                    <div style="margin-bottom: 10px">
+                      <p
+                        style="
+                          font-size: 14px;
+                          margin: 14px 0;
+                          
+                        "
+                      >
+                        <%= date %>
+                      </p>
+                      <!--24 April 2021-->
+                      <img
+                        src="https://orbitlms-uploadfiles-dev.s3.amazonaws.com/images/1665731277516.png"
+                        style="height: 50px"
+                        alt="Signature"
+                      />
+                    </div>
+                    <p
+                      style="
+                        font-size: 14px;
+                        font-weight: 600;
+                        
+                      "
+                    >
+                      Dr.-Ing. Ilham Habibie, M.B.A
+                    </p>
+                    <p
+                      style="
+                        font-size: 14px;
+                        margin-top: 3px;
+                        
+                      "
+                    >
+                      Commisioner & Co-Founder Orbit Future Academy.
+                    </p>
+                  </div>
+                  <div
+                    style="
+                      float: right;
+                      text-align: right;
+                      position: absolute;
+                      bottom: 0;
+                      right: 0;
+                    "
+                  >
+                    <img
+                      src="<%= qrUrl %>"
+                      style="height: 120px; width: 120px"
+                      alt="QRCode"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
